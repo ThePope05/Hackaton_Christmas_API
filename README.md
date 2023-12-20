@@ -10,3 +10,11 @@
 User request the best car of a brand,
 our api will request all info from that brand,
 compare all those cars and return the 'best' car
+
+
+### Resources
+- Seting up the api:
+  https://code.tutsplus.com/how-to-build-a-simple-rest-api-in-php--cms-37000t
+
+- Our api:
+  https://api-ninjas.com/api/cars
