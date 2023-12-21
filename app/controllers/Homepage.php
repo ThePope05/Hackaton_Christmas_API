@@ -6,7 +6,8 @@ class Homepage extends BaseController
     {
         $data = [
             'title' => 'Homepage',
-            'model' => null
+            'model' => null,
+            'joke' => $this->model('HomepageModel')->getDadJoke(),
         ];
 
         $this->view('Homepage/index', $data);
@@ -19,6 +20,7 @@ class Homepage extends BaseController
         $data = [
             'title' => 'Homepage',
             'model' => $this->model('HomepageModel')->getCarModels($brandName),
+            'joke' => $this->model('HomepageModel')->getDadJoke(),
         ];
 
         $this->view('Homepage/index', $data);
