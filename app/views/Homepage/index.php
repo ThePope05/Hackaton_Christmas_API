@@ -5,7 +5,7 @@
         <h1><?= $data['title']; ?></h1>
 
         <form action="/Homepage/getModels" method="post">
-            <input type="text" placeholder="Brand name" name="brandName">
+            <input type="text" placeholder="Brand name" name="brandName" required="name">
 
             <input type="submit" value="Submit">
         </form>
