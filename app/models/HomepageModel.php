@@ -37,8 +37,8 @@ class HomepageModel
         $data = json_decode($response, true);
 
         foreach ($data as $joke) {
-            $data = $joke['joke'];
+            $dadjoke = $joke['joke'];
         }
-        return $data;
+        return $dadjoke;
     }
 }

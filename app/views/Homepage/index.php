@@ -15,7 +15,7 @@
                 <li><?= $model['model']; ?></li>
             <?php endforeach; ?>
         </ul>
-
+        <p><?php $joke ?></p>
     <?php endif; ?>
 
 </body>

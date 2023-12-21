@@ -25,11 +25,11 @@ class Homepage extends BaseController
 
     public function getJoke()
     {
-        $data = [
+        $joke = [
             'title' => 'Homepage',
             'joke' => $this->model('HomepageModel')->getDadJoke(),
         ];
 
-        $this->view('Homepage/index', $data);
+        $this->view('Homepage/index', $joke);
     }
 }
