@@ -1,2 +1,4 @@
 app/config/config.php
 .htaccess
+node_modules
+*.css*
