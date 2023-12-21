@@ -9,6 +9,8 @@ class HomepageModel
     {
         $brandApiUrl = $this->apiUrl . "make=" . $brandName;
 
+        $brandApiUrl = str_replace(' ', '%20', $brandApiUrl);
+
         $context = stream_context_create([
             'http' => [
                 'method' => 'GET',
@@ -19,12 +21,16 @@ class HomepageModel
         $response = file_get_contents($brandApiUrl, false, $context);
         $data = json_decode($response, true);
 
+        if (is_null($data)) return null;
+
         return $this->compareModels($data);
     }
 
     public function getWorstModel(string $brandName)
     {
         $brandApiUrl = $this->apiUrl . "make=" . $brandName;
+
+        $brandApiUrl = str_replace(' ', '%20', $brandApiUrl);
 
         $context = stream_context_create([
             'http' => [
@@ -43,6 +49,10 @@ class HomepageModel
             $i++;
         }
 
+        if (!isset($modelsPoints[0])) {
+            return null;
+        }
+
         $minPoints = min($modelsPoints);
         $minPointsIndex = array_search($minPoints, $modelsPoints);
 
@@ -56,6 +66,10 @@ class HomepageModel
         foreach ($models as $model) {
             $modelsPoints[$i] = $this->getModelPoints($model);
             $i++;
+        }
+
+        if (!isset($modelsPoints[0])) {
+            return null;
         }
 
         $maxPoints = max($modelsPoints);

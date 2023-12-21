@@ -6,7 +6,8 @@ class Homepage extends BaseController
     {
         $data = [
             'title' => 'Best of the best',
-            'model' => null,
+            'bestModel' => null,
+            'worstModel' => null,
             'joke' => $this->model('HomepageModel')->getDadJoke(),
         ];
 

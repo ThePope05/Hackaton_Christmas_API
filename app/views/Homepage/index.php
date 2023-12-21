@@ -16,7 +16,9 @@
                 <a href="https://www.google.com/search?q=<?= $data['bestModel']['make'] . "%20" . $data['bestModel']['model'] . "%20" . $data['bestModel']['year'] ?>" target="_blank">
                     <p>Model: <?= $data['bestModel']['model'] ?></p>
                 </a>
-                <p>Displacement: <?= $data['bestModel']['displacement'] ?></p>
+                <?php if (isset($data['bestModel']['displacement'])) : ?>
+                    <p>Displacement: <?= $data['bestModel']['displacement'] ?></p>
+                <?php endif; ?>
                 <p>Year: <?= $data['bestModel']['year'] ?></p>
                 <p>Transmission: <?= $data['bestModel']['transmission'] ?></p>
                 <p>Fuel: <?= $data['bestModel']['fuel_type'] ?></p>
@@ -29,7 +31,9 @@
                 <a href="https://www.google.com/search?q=<?= $data['worstModel']['make'] . "%20" . $data['worstModel']['model'] . "%20" . $data['worstModel']['year'] ?>" target="_blank">
                     <p>Model: <?= $data['worstModel']['model'] ?></p>
                 </a>
-                <p>Displacement: <?= $data['worstModel']['displacement'] ?></p>
+                <?php if (isset($data['worstModel']['displacement'])) : ?>
+                    <p>Displacement: <?= $data['worstModel']['displacement'] ?></p>
+                <?php endif; ?>
                 <p>Year: <?= $data['worstModel']['year'] ?></p>
                 <p>Transmission: <?= $data['worstModel']['transmission'] ?></p>
                 <p>Fuel: <?= $data['worstModel']['fuel_type'] ?></p>
