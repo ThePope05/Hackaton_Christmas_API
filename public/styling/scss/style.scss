@@ -1,0 +1,121 @@
+html {
+    font-size: 18px;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Roboto Slab", serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100vh;
+
+    background-image: url(https://wallpapers.com/images/high/4k-bmw-4-series-x44p1lte1sjdpod1.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    backdrop-filter: blur(5px);
+
+    div.container {
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        width: 40%;
+        height: 60vh;
+
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 1rem;
+        > h1 {
+            font-size: 3rem;
+        }
+
+        > .carData {
+            background-color: #fff;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            margin: 1rem 0;
+            border-radius: 0.5rem;
+
+            width: 80%;
+            height: 40%;
+
+            > h2 {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            > p {
+                width: 100%;
+                font-size: 1.2rem;
+                margin-top: 0.1rem;
+                padding: 0 0.5rem;
+                text-align: left;
+            }
+        }
+
+        > form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 80%;
+
+            > input {
+                height: 3rem;
+                font-size: 1.2rem;
+                border: none;
+                outline: none;
+                text-align: center;
+                &:first-of-type {
+                    width: 80%;
+                    border-radius: 0.5rem 0 0 0.5rem;
+                }
+                &:last-of-type {
+                    width: 20%;
+                    border-radius: 0 0.5rem 0.5rem 0;
+
+                    font-weight: 900;
+
+                    background-color: rgb(196, 138, 88);
+                    cursor: pointer;
+
+                    transition: background-color 0.3s ease-in-out;
+
+                    &:hover {
+                        background-color: rgb(208, 163, 124);
+                    }
+                }
+            }
+        }
+
+        #dad-joke {
+            background-color: rgba(255, 255, 255, 0.5);
+
+            position: absolute;
+            bottom: -3rem;
+            font-size: 1.2rem;
+            font-weight: 900;
+            text-align: center;
+
+            padding: 0.3rem 0;
+            width: 100%;
+            border-radius: 1rem;
+        }
+    }
+}

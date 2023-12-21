@@ -5,7 +5,7 @@ class HomepageModel
     private $apiUrl = "https://api.api-ninjas.com/v1/cars?limit=500&";
     private $dadJokeUrl = "https://api.api-ninjas.com/v1/dadjokes?limit=1";
 
-    public function getCarModels(string $brandName)
+    public function getBestModel(string $brandName)
     {
         $brandApiUrl = $this->apiUrl . "make=" . $brandName;
 
@@ -20,6 +20,33 @@ class HomepageModel
         $data = json_decode($response, true);
 
         return $this->compareModels($data);
+    }
+
+    public function getWorstModel(string $brandName)
+    {
+        $brandApiUrl = $this->apiUrl . "make=" . $brandName;
+
+        $context = stream_context_create([
+            'http' => [
+                'method' => 'GET',
+                'header' => "X-Api-Key: " . API_KEY
+            ]
+        ]);
+
+        $response = file_get_contents($brandApiUrl, false, $context);
+        $data = json_decode($response, true);
+
+        $modelsPoints = [];
+        $i = 0;
+        foreach ($data as $model) {
+            $modelsPoints[$i] = $this->getModelPoints($model);
+            $i++;
+        }
+
+        $minPoints = min($modelsPoints);
+        $minPointsIndex = array_search($minPoints, $modelsPoints);
+
+        return $data[$minPointsIndex];
     }
 
     public function compareModels(array $models)

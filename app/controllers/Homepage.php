@@ -5,7 +5,7 @@ class Homepage extends BaseController
     public function index()
     {
         $data = [
-            'title' => 'Homepage',
+            'title' => 'Best of the best',
             'model' => null,
             'joke' => $this->model('HomepageModel')->getDadJoke(),
         ];
@@ -18,8 +18,9 @@ class Homepage extends BaseController
         $brandName = $_POST['brandName'];
 
         $data = [
-            'title' => 'Homepage',
-            'model' => $this->model('HomepageModel')->getCarModels($brandName),
+            'title' => 'Best of the best',
+            'bestModel' => $this->model('HomepageModel')->getBestModel($brandName),
+            'worstModel' => $this->model('HomepageModel')->getWorstModel($brandName),
             'joke' => $this->model('HomepageModel')->getDadJoke(),
         ];
 
