@@ -18,3 +18,4 @@ compare all those cars and return the 'best' car
 
 - Our api:
   https://api-ninjas.com/api/cars
+  https://api-ninjas.com/api/dadjokes
