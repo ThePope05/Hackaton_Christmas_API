@@ -7,7 +7,7 @@ class Homepage extends BaseController
         $data = [
             'title' => 'Homepage'
         ];
-    
+
         $this->view('Homepage/index', $data);
     }
 }
