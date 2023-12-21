@@ -10,13 +10,13 @@
     </form>
 
     <?php if ($data['model']) : ?>
-        <?php var_dump($data["model"]) ?>
         <h3>Best <?= $data['model']['make'] ?> model:</h3>
         <p>Model: <?= $data['model']['model'] ?></p>
         <p>Displacement: <?= $data['model']['displacement'] ?></p>
         <p>Year: <?= $data['model']['year'] ?></p>
         <p>Transmission: <?= $data['model']['transmission'] ?></p>
         <p>Fuel: <?= $data['model']['fuel_type'] ?></p>
+        <p><?php $joke ?></p>
     <?php endif; ?>
 
 </body>

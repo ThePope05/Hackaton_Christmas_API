@@ -23,4 +23,14 @@ class Homepage extends BaseController
 
         $this->view('Homepage/index', $data);
     }
+
+    public function getJoke()
+    {
+        $joke = [
+            'title' => 'Homepage',
+            'joke' => $this->model('HomepageModel')->getDadJoke(),
+        ];
+
+        $this->view('Homepage/index', $joke);
+    }
 }
