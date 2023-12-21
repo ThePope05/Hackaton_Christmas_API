@@ -17,9 +17,8 @@
         <p>Year: <?= $data['model']['year'] ?></p>
         <p>Transmission: <?= $data['model']['transmission'] ?></p>
         <p>Fuel: <?= $data['model']['fuel_type'] ?></p>
-        <p><?php $joke ?></p>
     <?php endif; ?>
-
+    <p><?= $data['joke'] ?></p>
 </body>
 
 </html>

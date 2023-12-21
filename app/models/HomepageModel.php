@@ -2,7 +2,7 @@
 
 class HomepageModel
 {
-    private $apiUrl = "https://api.api-ninjas.com/v1/cars?limit=100&";
+    private $apiUrl = "https://api.api-ninjas.com/v1/cars?limit=500&";
     private $dadJokeUrl = "https://api.api-ninjas.com/v1/dadjokes?limit=1";
 
     public function getCarModels(string $brandName)
@@ -101,10 +101,8 @@ class HomepageModel
         return ($model['cylinders']);
     }
 
-    public function getDadJoke(string $brandName)
+    public function getDadJoke()
     {
-        $brandApiUrl = $this->dadJokeUrl . "make=" . $brandName;
-
         $context = stream_context_create([
             'http' => [
                 'method' => 'GET',
@@ -112,12 +110,13 @@ class HomepageModel
             ]
         ]);
 
-        $response = file_get_contents($brandApiUrl, false, $context);
+        $response = file_get_contents($this->dadJokeUrl, false, $context);
         $data = json_decode($response, true);
 
         foreach ($data as $joke) {
             $dadjoke = $joke['joke'];
         }
+
         return $dadjoke;
     }
 }
