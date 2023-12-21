@@ -7,6 +7,7 @@
         <input type="text" placeholder="Brand name" name="brandName">
 
         <button>Submit</button>
+
     </form>
 
     <?php if ($data['model']) : ?>
