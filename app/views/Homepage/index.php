@@ -13,7 +13,7 @@
         <?php if ($data['bestModel']) : ?>
             <div class="carData">
                 <h3>Best <?= $data['bestModel']['make'] ?> model:</h3>
-                <a href="https://www.google.com/search?q=<?= $data['bestModel']['make'] . "%20" . $data['bestModel']['model'] ?>" target="_blank">
+                <a href="https://www.google.com/search?q=<?= $data['bestModel']['make'] . "%20" . $data['bestModel']['model'] . "%20" . $data['bestModel']['year'] ?>" target="_blank">
                     <p>Model: <?= $data['bestModel']['model'] ?></p>
                 </a>
                 <p>Displacement: <?= $data['bestModel']['displacement'] ?></p>
@@ -26,7 +26,7 @@
         <?php if ($data['worstModel']) : ?>
             <div class="carData">
                 <h3>Worst <?= $data['worstModel']['make'] ?> model:</h3>
-                <a href="https://www.google.com/search?q=<?= $data['worstModel']['make'] . "%20" . $data['worstModel']['model'] ?>" target="_blank">
+                <a href="https://www.google.com/search?q=<?= $data['worstModel']['make'] . "%20" . $data['worstModel']['model'] . "%20" . $data['worstModel']['year'] ?>" target="_blank">
                     <p>Model: <?= $data['worstModel']['model'] ?></p>
                 </a>
                 <p>Displacement: <?= $data['worstModel']['displacement'] ?></p>
