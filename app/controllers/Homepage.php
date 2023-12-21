@@ -6,7 +6,7 @@ class Homepage extends BaseController
     {
         $data = [
             'title' => 'Homepage',
-            'models' => null
+            'model' => null
         ];
 
         $this->view('Homepage/index', $data);
@@ -18,7 +18,7 @@ class Homepage extends BaseController
 
         $data = [
             'title' => 'Homepage',
-            'models' => $this->model('HomepageModel')->getCarModels($brandName),
+            'model' => $this->model('HomepageModel')->getCarModels($brandName),
         ];
 
         $this->view('Homepage/index', $data);
